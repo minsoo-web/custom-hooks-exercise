@@ -1,5 +1,5 @@
 import React from "react";
-import { useInput, useTabs, useTitle } from "./hooks";
+import { useClick, useInput, useTabs, useTitle } from "./hooks";
 
 const content: useTabs.TabItem[] = [
   {
@@ -29,6 +29,10 @@ function App() {
     titleUpdater("title");
   }, 1500);
 
+  const sayHello = () => console.log("say hello");
+
+  const title = useClick(sayHello);
+
   return (
     <>
       <div className="App">hi</div>
@@ -46,6 +50,7 @@ function App() {
       <div>{tabs.currentItem.content}</div>
 
       <hr />
+      <h1 ref={title}>title</h1>
     </>
   );
 }
