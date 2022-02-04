@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useInput, useTabs } from "./hooks";
+import React from "react";
+import { useInput, useTabs, useTitle } from "./hooks";
 
 const content: useTabs.TabItem[] = [
   {
@@ -17,20 +17,17 @@ const content: useTabs.TabItem[] = [
 ];
 
 function App() {
-  const sayHello = () => console.log("object");
-
   const maxLength = (value: string) => value.length <= 10;
 
   const tabs = useTabs.default(0, content);
 
   const name = useInput("Mr.", maxLength);
 
-  const [number, setNumber] = useState(0);
-  const [aNumber, setAnumber] = useState(0);
+  const titleUpdater = useTitle("Loading...");
 
-  useEffect(() => {
-    sayHello();
-  }, [number]);
+  setTimeout(() => {
+    titleUpdater("title");
+  }, 1500);
 
   return (
     <>
@@ -49,9 +46,6 @@ function App() {
       <div>{tabs.currentItem.content}</div>
 
       <hr />
-
-      <button onClick={() => setNumber(number + 1)}>{number}</button>
-      <button onClick={() => setAnumber(aNumber + 1)}>{aNumber}</button>
     </>
   );
 }
