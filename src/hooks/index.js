@@ -4,5 +4,6 @@ import useTitle from "./useTitle";
 import useClick from "./useClick";
 import useConfirm from "./useConfirm";
 import useBeforeLeave from "./useBeforeLeave";
+import useFadeIn from "./useFadeIn";
 
-export { useInput, useTabs, useTitle, useClick, useConfirm, useBeforeLeave };
+export { useInput, useTabs, useTitle, useClick, useConfirm, useBeforeLeave, useFadeIn };

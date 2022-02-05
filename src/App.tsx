@@ -1,5 +1,13 @@
-import React, { useCallback, useEffect } from "react";
-import { useBeforeLeave, useClick, useConfirm, useInput, useTabs, useTitle } from "./hooks";
+import React from "react";
+import {
+  useFadeIn,
+  useBeforeLeave,
+  useClick,
+  useConfirm,
+  useInput,
+  useTabs,
+  useTitle
+} from "./hooks";
 import usePreventLeave from "./hooks/usePreventLeave";
 
 const content: useTabs.TabItem[] = [
@@ -44,13 +52,19 @@ function App() {
 
   useBeforeLeave(begforLife);
 
+  const fadeElement = useFadeIn();
+  const fadeElement2 = useFadeIn(3);
+
   return (
     <>
-      <div className="App">hi</div>
+      <h1>Custom Hooks Playground</h1>
 
+      <hr />
+      <h2>useInput</h2>
       <input type="text" placeholder="hi" {...name} />
 
       <hr />
+      <h2>useTabs</h2>
 
       {content.map((section, index) => (
         <button key={index} onClick={() => tabs.changeItem(index)}>
@@ -61,22 +75,29 @@ function App() {
       <div>{tabs.currentItem.content}</div>
 
       <hr />
-      <h1>useClick</h1>
+      <h2>useClick</h2>
 
       <h2 ref={title}>click here and check the console</h2>
 
       <hr />
-      <h1>useConfirm</h1>
+      <h2>useConfirm</h2>
       <button onClick={confirmDelete}>delete the world</button>
 
       <hr />
-      <h1>usePreventLeave</h1>
+      <h2>usePreventLeave</h2>
 
       <button onClick={enablePrevent}>Protect</button>
       <button onClick={disablePrevent}>UnProtect</button>
 
       <hr />
-      <h1>useBeforeLeave</h1>
+      <h2>useBeforeLeave</h2>
+      <p>mouse leave from window (direction to the top) and check the console</p>
+
+      <hr />
+      <h2>useFadeIn</h2>
+
+      <p {...fadeElement}>It is fade in duration with 1s</p>
+      <p {...fadeElement2}>It is fade in duration with 3s</p>
     </>
   );
 }

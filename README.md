@@ -7,6 +7,7 @@
 - useConfirm
 - usePreventLeave
 - useBeforeLeave
+- useFadeIn
 
 ## 참고자료
 
