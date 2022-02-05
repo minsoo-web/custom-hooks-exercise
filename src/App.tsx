@@ -1,5 +1,6 @@
 import React from "react";
 import { useClick, useConfirm, useInput, useTabs, useTitle } from "./hooks";
+import usePreventLeave from "./hooks/usePreventLeave";
 
 const content: useTabs.TabItem[] = [
   {
@@ -37,6 +38,8 @@ function App() {
 
   const confirmDelete = useConfirm("Are you sure?", deleteWorld, abort);
 
+  const { disablePrevent, enablePrevent } = usePreventLeave();
+
   return (
     <>
       <div className="App">hi</div>
@@ -55,11 +58,18 @@ function App() {
 
       <hr />
       <h1>useClick</h1>
-      <h2 ref={title}>title</h2>
+
+      <h2 ref={title}>click here and check the console</h2>
 
       <hr />
       <h1>useConfirm</h1>
       <button onClick={confirmDelete}>delete the world</button>
+
+      <hr />
+      <h1>usePreventLeave</h1>
+
+      <button onClick={enablePrevent}>Protect</button>
+      <button onClick={disablePrevent}>UnProtect</button>
     </>
   );
 }
