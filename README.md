@@ -6,6 +6,7 @@
 - useClick
 - useConfirm
 - usePreventLeave
+- useBeforeLeave
 
 ## 참고자료
 

@@ -1,5 +1,5 @@
-import React from "react";
-import { useClick, useConfirm, useInput, useTabs, useTitle } from "./hooks";
+import React, { useCallback, useEffect } from "react";
+import { useBeforeLeave, useClick, useConfirm, useInput, useTabs, useTitle } from "./hooks";
 import usePreventLeave from "./hooks/usePreventLeave";
 
 const content: useTabs.TabItem[] = [
@@ -40,6 +40,10 @@ function App() {
 
   const { disablePrevent, enablePrevent } = usePreventLeave();
 
+  const begforLife = () => console.log("Please don`t leave");
+
+  useBeforeLeave(begforLife);
+
   return (
     <>
       <div className="App">hi</div>
@@ -70,6 +74,9 @@ function App() {
 
       <button onClick={enablePrevent}>Protect</button>
       <button onClick={disablePrevent}>UnProtect</button>
+
+      <hr />
+      <h1>useBeforeLeave</h1>
     </>
   );
 }
