@@ -4,6 +4,7 @@ import {
   useClick,
   useConfirm,
   useFadeIn,
+  useFullScreen,
   useInput,
   useNetwork,
   useScroll,
@@ -63,6 +64,8 @@ function App() {
   const onLine = useNetwork(handleNetworkChange);
 
   const { y } = useScroll();
+
+  const { elementRef, triggerFullScreen } = useFullScreen();
 
   return (
     <main style={{ height: "200vh", marginTop: 150 }}>
@@ -126,6 +129,17 @@ function App() {
         <h2>useScroll</h2>
         <p>this text color is change by scrollheight</p>
       </div>
+
+      <hr />
+      <h2>useFullScreen</h2>
+      <img
+        ref={elementRef}
+        src="https://user-images.githubusercontent.com/57122180/146026241-9225ca46-6123-4716-8df3-cea52a39d2a8.jpeg"
+        width={200}
+        alt="아이유 사진"
+      />
+      <br />
+      <button onClick={triggerFullScreen}>Go Full Screen!</button>
     </main>
   );
 }

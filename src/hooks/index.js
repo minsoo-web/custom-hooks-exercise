@@ -7,6 +7,7 @@ import useBeforeLeave from "./useBeforeLeave";
 import useFadeIn from "./useFadeIn";
 import useNetwork from "./useNetwork";
 import useScroll from "./useScroll";
+import useFullScreen from "./useFullScreen";
 
 export {
   useInput,
@@ -17,5 +18,6 @@ export {
   useBeforeLeave,
   useFadeIn,
   useNetwork,
-  useScroll
+  useScroll,
+  useFullScreen
 };

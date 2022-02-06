@@ -9,6 +9,7 @@
 - useBeforeLeave
 - useFadeIn
 - useNetwork
+- useFullScreen
 
 ## 참고자료
 
