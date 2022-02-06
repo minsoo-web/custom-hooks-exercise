@@ -7,6 +7,7 @@ import {
   useFullScreen,
   useInput,
   useNetwork,
+  useNotification,
   useScroll,
   useTabs,
   useTitle
@@ -66,6 +67,8 @@ function App() {
   const { y } = useScroll();
 
   const { elementRef, triggerFullScreen } = useFullScreen();
+
+  const callNotifiaction = useNotification("it is title", { body: "It is Body" });
 
   return (
     <main style={{ height: "200vh", marginTop: 150 }}>
@@ -140,6 +143,10 @@ function App() {
       />
       <br />
       <button onClick={triggerFullScreen}>Go Full Screen!</button>
+
+      <hr />
+      <h2>useNotification</h2>
+      <button onClick={callNotifiaction}>call notification</button>
     </main>
   );
 }

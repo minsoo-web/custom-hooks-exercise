@@ -8,6 +8,7 @@ import useFadeIn from "./useFadeIn";
 import useNetwork from "./useNetwork";
 import useScroll from "./useScroll";
 import useFullScreen from "./useFullScreen";
+import useNotification from "./useNotification";
 
 export {
   useInput,
@@ -19,5 +20,6 @@ export {
   useFadeIn,
   useNetwork,
   useScroll,
-  useFullScreen
+  useFullScreen,
+  useNotification
 };
