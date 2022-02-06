@@ -1,12 +1,13 @@
 import React from "react";
 import {
-  useFadeIn,
   useBeforeLeave,
   useClick,
   useConfirm,
+  useFadeIn,
   useInput,
   useTabs,
-  useTitle
+  useTitle,
+  useNetwork
 } from "./hooks";
 import usePreventLeave from "./hooks/usePreventLeave";
 
@@ -55,6 +56,11 @@ function App() {
   const fadeElement = useFadeIn();
   const fadeElement2 = useFadeIn(3);
 
+  const handleNetworkChange = (onLine: boolean) => {
+    console.log(onLine ? "We Just went online" : "We are offline");
+  };
+  const onLine = useNetwork(handleNetworkChange);
+
   return (
     <>
       <h1>Custom Hooks Playground</h1>
@@ -98,6 +104,10 @@ function App() {
 
       <p {...fadeElement}>It is fade in duration with 1s</p>
       <p {...fadeElement2}>It is fade in duration with 3s</p>
+
+      <hr />
+      <h2>useNetwork</h2>
+      <p>{onLine ? "onLine" : "offLine"}</p>
     </>
   );
 }
