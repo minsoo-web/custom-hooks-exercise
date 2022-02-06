@@ -9,6 +9,7 @@ import useNetwork from "./useNetwork";
 import useScroll from "./useScroll";
 import useFullScreen from "./useFullScreen";
 import useNotification from "./useNotification";
+import useAxios from "./useAxios";
 
 export {
   useInput,
@@ -21,5 +22,6 @@ export {
   useNetwork,
   useScroll,
   useFullScreen,
-  useNotification
+  useNotification,
+  useAxios
 };

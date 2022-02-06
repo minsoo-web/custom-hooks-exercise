@@ -1,4 +1,5 @@
 import React from "react";
+import { ExampleUseAxios } from "./components";
 import {
   useBeforeLeave,
   useClick,
@@ -147,6 +148,10 @@ function App() {
       <hr />
       <h2>useNotification</h2>
       <button onClick={callNotifiaction}>call notification</button>
+
+      <hr />
+      <h2>useAxios</h2>
+      <ExampleUseAxios />
     </main>
   );
 }
