@@ -5,9 +5,10 @@ import {
   useConfirm,
   useFadeIn,
   useInput,
+  useNetwork,
+  useScroll,
   useTabs,
-  useTitle,
-  useNetwork
+  useTitle
 } from "./hooks";
 import usePreventLeave from "./hooks/usePreventLeave";
 
@@ -61,8 +62,10 @@ function App() {
   };
   const onLine = useNetwork(handleNetworkChange);
 
+  const { y } = useScroll();
+
   return (
-    <>
+    <main style={{ height: "200vh", marginTop: 150 }}>
       <h1>Custom Hooks Playground</h1>
 
       <hr />
@@ -108,7 +111,22 @@ function App() {
       <hr />
       <h2>useNetwork</h2>
       <p>{onLine ? "onLine" : "offLine"}</p>
-    </>
+
+      <div
+        style={{
+          position: "fixed",
+          color: y > 100 ? "blue" : "red",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 150,
+          backgroundColor: "white"
+        }}
+      >
+        <h2>useScroll</h2>
+        <p>this text color is change by scrollheight</p>
+      </div>
+    </main>
   );
 }
 
