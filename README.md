@@ -73,6 +73,3 @@ function App() {
 
 2. Sonny Sangha
    https://www.youtube.com/watch?v=NZEUDJvpQMM
-
-3. useHooks
-   https://usehooks.com/
